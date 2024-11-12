@@ -1,0 +1,66 @@
+{
+  "name": "we-req",
+  "version": "1.0.0",
+  "description": "weReq是基于微信小程序的 wx.request的高级封装，提供全局和外部拦截器的管理，支持自动登录等功能，旨在简化微信小程序网络请求的处理流程，提升开发者的使用体验。",
+  "keywords": [
+    "request封装",
+    "promise",
+    "拦截器",
+    "自动登录",
+    "加载框",
+    "网络封装",
+    "小程序"
+  ],
+  "homepage": "https://github.com/yydongwang/weReq",
+  "scripts": {
+    "build": "webpack",
+    "prettier": "prettier --write .",
+    "commit": "czg"
+  },
+  "author": {
+    "name": "yydongwang",
+    "email": "745696144@qq.com",
+    "url": "https://github.com/yydongwang"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yydongwang/weReq.git"
+  },
+  "main": "build/weReq.min.js",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-git": "^1.10.1",
+    "czg": "^1.10.1",
+    "eslint": "^9.13.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^8.0.0",
+    "miniprogram-api-typings": "^4.0.1",
+    "prettier": "^3.3.3",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
+      "prettier --write--parser json"
+    ],
+    "package.json": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
