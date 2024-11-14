@@ -23,7 +23,7 @@
 
 使用 npm 构建前，请先阅读微信官方的 [npm 支持](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)
 
-步骤1：npm install weReq
+步骤1：npm install we-req
 
 步骤2： 构建 npm，点击开发者工具中的菜单栏：工具 --> 构建 npm
 
