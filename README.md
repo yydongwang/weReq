@@ -27,12 +27,12 @@
 
 步骤2： 构建 npm，点击开发者工具中的菜单栏：工具 --> 构建 npm
 
-步骤3：完成前两步骤就可以引入啦，import Request from 'weReq'
+步骤3：完成前两步骤就可以引入啦，import Request from 'we-req'
 
 ## 使用示例
 
 ```javascript
-import Request from 'weReq';  //或者 import Request from '../utils/weReq.min.js';
+import Request from 'we-req';  //或者 import Request from '../utils/weReq.min.js';
 const weReq = Request.init({
   baseURL: 'https://api.example.com',
   timeout：3000,
@@ -64,7 +64,7 @@ weReq.post({ url: '/endpoint',data:{name:"我是小明"} })
 ### 创建一个实例
 
 ```javascript
-import Request from 'weReq'
+import Request from 'we-req'
 const weReq = Request.init({
   baseURL: BASE_URL,
   timeout: TIME_OUT,
@@ -107,7 +107,7 @@ weReq#post(config)
 **示例代码**
 
 ```javascript
-import Request from 'weReq'
+import Request from 'we-req'
 const weReq = Request.init({
   baseURL: 'https://wx.mock.com/api/',
   timeout: 3000,
@@ -163,7 +163,7 @@ weReq
 **示例代码**
 
 ```javascript
-import Request from 'weReq';
+import Request from 'we-req';
 const weReq =  Request.init({
   baseURL: 'https://wx.mock.com/api/',
   timeout: 3000,
@@ -222,7 +222,7 @@ const weReq =  Request.init({
 **示例代码**
 
 ```javascript
-import Request from 'weReq'
+import Request from 'we-req'
 const weReq = Request.init({
   baseURL: 'https://wx.mock.com/api/',
   //获取本地token，放到请求拦截器，每次网络请求前带上token
