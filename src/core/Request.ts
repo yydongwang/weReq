@@ -62,7 +62,7 @@ class Request {
   private refreshTokenFn(code: string) {
     return new Promise<any>((resolve, reject) => {
       const { reTokenConfig } = this.autoLoginConfig!
-      const { url, method = 'GET', codeKey } = reTokenConfig // 解构获取配置信息
+      const { url, method = 'GET', codeKey = 'code' } = reTokenConfig // 解构获取配置信息
       let requestUrl = url
       let data: Record<string, any> = {}
 
