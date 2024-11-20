@@ -189,7 +189,7 @@ const weReq =  Request.init({
 });
 ```
 
-### 自动登录（reLoginConfig）
+### 自动登录（autoLoginConfig）
 
 简单来说，**小程序登录是通过 `code` 换取 `session_key` 的过程，过通过 Header 携带 `sessionId`发送后端**。
 
