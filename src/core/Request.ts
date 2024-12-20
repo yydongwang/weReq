@@ -118,7 +118,6 @@ class Request {
         if (config.loading) {
           this.loading.hide()
         }
-        config?.interceptors?.responseSuccessFn?.(res)
       }
     })
   }
