@@ -211,13 +211,14 @@ const weReq =  Request.init({
 
 **reTokenConfig参数对象说明**
 
-| 参数    | 类型     | 默认值 | 必填 | 说明                                                                                                                                       |
-| ------- | -------- | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| 参数    | 类型     | 默认值 | 必填 | 说明                                                         |
+| ------- | -------- | ------ | ---- | ------------------------------------------------------------ |
 | url     | String   |        | 是   | 获取token的网络请求url ,它可以通过设置一个 `baseURL` 便于后面的请求方法传递相对 URL，不用每次请求带上域名,如果是绝对url将默认以绝对url优先 |
-| method  | Function |        | 是   | GET\|POST,如果是GET请求,code将会自动拼接到url后面，如果是POST请求将会放入data传到后端                                                      |
-| codeKey | String   | code   | 否   | 决定你的code传入的key的变量名字，如GET请求时/code?=123456,POST请求为{code:"123456"}                                                        |
-| data    | Object   |        | 否   | 其他参数                                                                                                                                   |
-| success | Function |        | 否   | 请求成功的回调，可在此存储你需要的业务，如：存储token到本地存储                                                                            |
+| method  | Function |        | 是   | GET\|POST,如果是GET请求,code将会自动拼接到url后面，如果是POST请求将会放入data传到后端 |
+| headers | Object   | {}     | 否   | 设置请求的 headers，headers 中不能设置 Referer。`content-type` 默认为 `application/json`,详细见小程序官方文档 |
+| codeKey | String   | code   | 否   | 决定你的code传入的key的变量名字，如GET请求时/code?=123456,POST请求为{code:"123456"} |
+| data    | Object   |        | 否   | 其他参数                                                     |
+| success | Function |        | 否   | 请求成功的回调，可在此存储你需要的业务，如：存储token到本地存储 |
 
 **示例代码**
 

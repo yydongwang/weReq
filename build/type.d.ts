@@ -8,6 +8,7 @@ interface ReTokenConfig {
     method: reTokenConfigMethod;
     codeKey: string;
     data: Record<string, any>;
+    headers: Record<string, any>;
     success: (res: any) => void;
     fail: (err: any) => void;
 }
