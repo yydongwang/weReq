@@ -62,7 +62,12 @@ class Request {
   private refreshTokenFn(code: string) {
     return new Promise<any>((resolve, reject) => {
       const { reTokenConfig } = this.autoLoginConfig!
-      const { url, method = 'GET', codeKey = 'code' } = reTokenConfig // 解构获取配置信息
+      const {
+        url,
+        method = 'GET',
+        codeKey = 'code',
+        headers = {}
+      } = reTokenConfig // 解构获取配置信息
       let requestUrl = url
       let data: Record<string, any> = {}
 
@@ -73,16 +78,19 @@ class Request {
 
       // GET 请求时，将参数拼接到 URL 中
       if (method.toUpperCase() === 'GET') {
-        requestUrl = `${requestUrl}?${codeKey}=${code}`
+        // 判断是否已有查询参数
+        const hasQuery = requestUrl.includes('?')
+        const connector = hasQuery ? '&' : '?'
+        requestUrl += `${connector}${codeKey}=${code}`
       } else {
         // 其他请求方法，放在 data 中
         data = { [codeKey]: code, ...data }
       }
-
       wx.request({
         url: requestUrl,
         method: method.toUpperCase() as reTokenConfigMethod, // 强制转换为正确的枚举类型
         data,
+        header: headers,
         success: (res: any) => {
           if (res) {
             resolve(res)

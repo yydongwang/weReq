@@ -1,6 +1,6 @@
 {
   "name": "we-req",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "weReq是基于微信小程序的 wx.request的高级封装，提供全局和外部拦截器的管理，支持自动登录等功能，旨在简化微信小程序网络请求的处理流程，提升开发者的使用体验。",
   "keywords": [
     "request封装",
