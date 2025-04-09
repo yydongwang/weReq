@@ -66,10 +66,11 @@ class Request {
         url,
         method = 'GET',
         codeKey = 'code',
-        headers = {}
+        headers = {},
+        data: configData = {}
       } = reTokenConfig // 解构获取配置信息
       let requestUrl = url
-      let data: Record<string, any> = {}
+      let requestData: Record<string, any> = configData
 
       // 拼接 baseURL
       if (!isAbsoluteURL(requestUrl) && this.config.baseURL) {
@@ -83,13 +84,13 @@ class Request {
         const connector = hasQuery ? '&' : '?'
         requestUrl += `${connector}${codeKey}=${code}`
       } else {
-        // 其他请求方法，放在 data 中
-        data = { [codeKey]: code, ...data }
+        // 避免修改原始 configData
+        requestData = { [codeKey]: code, ...configData }
       }
       wx.request({
         url: requestUrl,
         method: method.toUpperCase() as reTokenConfigMethod, // 强制转换为正确的枚举类型
-        data,
+        data: requestData,
         header: headers,
         success: (res: any) => {
           if (res) {
