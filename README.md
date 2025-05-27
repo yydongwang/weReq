@@ -88,17 +88,17 @@ weReq#post(config)
 
 > 部分参数请参考小程序本身配置， [传送门](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/wx.request.html)。
 
-| 参数          | 类型                      | 默认值           | 必填 | 说明                                                                                                                                                                                               |
-| ------------- | ------------------------- | ---------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| url           | string                    |                  | 是   | 开发者服务器接口地址                                                                                                                                                                               |
-| data          | string/object/ArrayBuffer |                  | 否   | 请求的参数                                                                                                                                                                                         |
-| baseURL       | string                    |                  | 否   | 会自动添加到 url 前，除非 url 是一个绝对 URL，它可以通过设置一个 `baseURL` 便于后面的请求方法传递相对 URL，不用每次请求带上域名。                                                                  |
-| timeout       | number                    | 3000             | 否   | 超时时间，单位为毫秒。默认值为 60000                                                                                                                                                               |
-| method        | string                    | GET              | 否   | HTTP 请求方法                                                                                                                                                                                      |
-| headers       | object                    | application/json | 否   | 请求发送时候的请求头                                                                                                                                                                               |
-| loading       | boolean/string            | false            | 否   | 请求过程页面是否展示全屏的加载框，默认文字是加载中，当值为字符串时，将替换loading的文字                                                                                                            |
-| interceptors  | object                    | false            | 否   | 拦截器，在请求前或响应的时候对数据做拦截，可以对请求参数做一些处理或对响应数据做处理，比如：自定义加载框、发送前可以对 config 进行修改、在收到响应后可以对 res 进行处理或转换等。                  |
-| reLoginConfig | object                    | false            | 否   | 登录管理器，对一些开发者，需要拿到小程序登录凭证，带到给服务器结合并返回服务器的数据做处理，当session_key过期的时候会自动登录，并重新请求session_key过期的时候的网络请求，做到用户无感知登录过程。 |
+| 参数            | 类型                      | 默认值           | 必填 | 说明                                                         |
+| --------------- | ------------------------- | ---------------- | ---- | ------------------------------------------------------------ |
+| url             | string                    |                  | 是   | 开发者服务器接口地址                                         |
+| data            | string/object/ArrayBuffer |                  | 否   | 请求的参数                                                   |
+| baseURL         | string                    |                  | 否   | 会自动添加到 url 前，除非 url 是一个绝对 URL，它可以通过设置一个 `baseURL` 便于后面的请求方法传递相对 URL，不用每次请求带上域名。 |
+| timeout         | number                    | 3000             | 否   | 超时时间，单位为毫秒。默认值为 60000                         |
+| method          | string                    | GET              | 否   | HTTP 请求方法                                                |
+| headers         | object                    | application/json | 否   | 请求发送时候的请求头                                         |
+| loading         | boolean/string            | false            | 否   | 请求过程页面是否展示全屏的加载框，默认文字是加载中，当值为字符串时，将替换loading的文字 |
+| interceptors    | object                    | false            | 否   | 拦截器，在请求前或响应的时候对数据做拦截，可以对请求参数做一些处理或对响应数据做处理，比如：自定义加载框、发送前可以对 config 进行修改、在收到响应后可以对 res 进行处理或转换等。 |
+| autoLoginConfig | object                    | false            | 否   | 登录管理器，对一些开发者，需要拿到小程序登录凭证，带到给服务器结合并返回服务器的数据做处理，当session_key过期的时候会自动登录，并重新请求session_key过期的时候的网络请求，做到用户无感知登录过程。 |
 
 ### 全屏加载框(loading)
 
@@ -238,7 +238,7 @@ const weReq = Request.init({
       return config
     }
   },
-  reLoginConfig: {
+  autoLoginConfig: {
     // 当token过期的时候刷新token并存储到本地
     reTokenConfig: {
       url: '/refresh_token',
