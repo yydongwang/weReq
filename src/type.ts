@@ -39,7 +39,7 @@ export interface WeAppRequestConfig {
   baseURL?: string
   loading?: boolean
   interceptors?: Interceptors
-  reLoginConfig?: autoLoginConfig
+  autoLoginConfig?: autoLoginConfig
 }
 
 export type RequestConfig = WechatMiniprogram.RequestOption & WeAppRequestConfig
